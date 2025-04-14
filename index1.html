@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Animated Cards</title>
+  <style>
+  
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 40px;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      width: 280px;
+      padding: 25px 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-image {
+      display: block;
+      margin: 0 auto 15px;
+    }
+
+    .profile-pic {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #4a90e2;
+    }
+    .card fade-in in button {
+      background-color: #28256c;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .profile-card button:hover {
+      background-color: #6a6af4;
+    }
+
+    .card i {
+      font-size: 40px;
+      margin-bottom: 15px;
+      color: #4a90e2;
+    }
+
+    .card p, .card ul {
+      font-size: 16px;
+      color: #333;
+      margin: 10px 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .card ul li {
+      margin: 5px 0;
+    }
+
+    /* Animations */
+    .fade-in {
+      animation: fadeIn 1.5s ease-in forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .slide-in {
+      animation: slideIn 1s ease-out forwards;
+      transform: translateX(-100%);
+    }
+
+    @keyframes slideIn {
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    .bounce {
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    .scale-hover:hover {
+      transform: scale(1.05);
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <h1>about me</h1>
+  <div class="card-container">
+   
+    <div class="card fade-in">
+      <img src="WIN_20241119_10_14_32_Pro.jpg" alt="Profile Picture" class="card-image profile-pic" />
+      <p><strong>Sushant Thapa Chhetri</strong></p>
+      <p>IT Student</p>
+      <p>Loves to explore the world</p>
+      <button>Follow</button>
+    </div>
+
+   
+    <div class="card slide-in">
+      <i class="fas fa-arrow-right"></i>
+      <p><strong>Things I like to do the most:</strong></p>
+      <ul>
+        <li>Cooking</li>
+        <li>Travelling</li>
+        <li>Playing musical instruments</li>
+      </ul>
+    </div>
+
+  
+    <div class="card bounce">
+      <i class="fas fa-globe"></i>
+      <p><strong>Countries I have visited:</strong></p>
+      <ul>
+        <li>Thailand</li>
+        <li>Cambodia</li>
+        <li>South Korea</li>
+      </ul>
+    </div>
+
+  
+    <div class="card scale-hover">
+      <i class="fas fa-plane"></i>
+      <p><strong>Countries I want to visit next:</strong></p>
+      <ul>
+        <li>Japan</li>
+        <li>Laos</li>
+        <li>Vietnam</li>
+        <li>Kazakhstan</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
